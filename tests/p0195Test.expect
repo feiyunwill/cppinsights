@@ -10,10 +10,10 @@ template<>
 struct overload<__lambda_12_7, __lambda_13_7> : public __lambda_12_7, public __lambda_13_7
 {
   using __lambda_12_7::operator();
-  // inline /*constexpr */ void ::operator()(int &) const;
+  // inline constexpr void ::operator()(int &) const;
   
   using __lambda_13_7::operator();
-  // inline /*constexpr */ void ::operator()(char &) const;
+  // inline constexpr void ::operator()(char &) const;
   
   // inline constexpr overload<__lambda_12_7, __lambda_13_7> & operator=(const overload<__lambda_12_7, __lambda_13_7> &) /* noexcept */ = delete;
   // inline constexpr overload<__lambda_12_7, __lambda_13_7> & operator=(overload<__lambda_12_7, __lambda_13_7> &&) /* noexcept */ = delete;
@@ -37,7 +37,7 @@ int main()
   class __lambda_12_7
   {
     public: 
-    inline /*constexpr */ void operator()(int &) const
+    inline constexpr void operator()(int &) const
     {
     }
     
@@ -48,21 +48,21 @@ int main()
     };
     
     private: 
-    static inline /*constexpr */ void __invoke(int & __param0)
+    static inline constexpr void __invoke(int & __param0)
     {
       __lambda_12_7{}.operator()(__param0);
     }
     
     public: 
-    // inline /*constexpr */ __lambda_12_7 & operator=(const __lambda_12_7 &) /* noexcept */ = delete;
-    // inline /*constexpr */ __lambda_12_7(__lambda_12_7 &&) noexcept = default;
+    // inline constexpr __lambda_12_7 & operator=(const __lambda_12_7 &) /* noexcept */ = delete;
+    // inline constexpr __lambda_12_7(__lambda_12_7 &&) noexcept = default;
   };
   
   
   class __lambda_13_7
   {
     public: 
-    inline /*constexpr */ void operator()(char &) const
+    inline constexpr void operator()(char &) const
     {
     }
     
@@ -73,14 +73,14 @@ int main()
     };
     
     private: 
-    static inline /*constexpr */ void __invoke(char & __param0)
+    static inline constexpr void __invoke(char & __param0)
     {
       __lambda_13_7{}.operator()(__param0);
     }
     
     public: 
-    // inline /*constexpr */ __lambda_13_7 & operator=(const __lambda_13_7 &) /* noexcept */ = delete;
-    // inline /*constexpr */ __lambda_13_7(__lambda_13_7 &&) noexcept = default;
+    // inline constexpr __lambda_13_7 & operator=(const __lambda_13_7 &) /* noexcept */ = delete;
+    // inline constexpr __lambda_13_7(__lambda_13_7 &&) noexcept = default;
   };
   
   overload<__lambda_12_7, __lambda_13_7> ol = {__lambda_12_7(__lambda_12_7{}), __lambda_13_7(__lambda_13_7{})};

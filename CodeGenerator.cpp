@@ -4704,10 +4704,8 @@ void CodeGenerator::InsertFunctionNameWithReturnType(const FunctionDecl&       d
     const bool  requiresComment{isCXXMethodDecl and not methodDecl->isUserProvided() and
                                not methodDecl->isExplicitlyDefaulted()};
     // [expr.prim.lambda.closure] p7 consteval/constexpr are obtained from the call operator
-    const bool          isLambdaStaticInvoker{isCXXMethodDecl and methodDecl->isLambdaStaticInvoker()};
-    const FunctionDecl& constExprDecl{not isLambdaStaticInvoker ? decl
-                                                                : *methodDecl->getParent()->getLambdaCallOperator()};
-    const auto          desugaredReturnType = GetType(GetDesugarReturnType(decl));
+    const bool isLambdaStaticInvoker{isCXXMethodDecl and methodDecl->isLambdaStaticInvoker()};
+    const auto desugaredReturnType = GetType(GetDesugarReturnType(decl));
 
     if(methodDecl) {
         if(requiresComment) {
@@ -4793,34 +4791,34 @@ void CodeGenerator::InsertFunctionNameWithReturnType(const FunctionDecl&       d
         }
     }
 
-    if(constExprDecl.isConstexpr()) {
-        const bool skipConstexpr{isLambda and not isa<CXXConversionDecl>(constExprDecl)};
-        // Special treatment for a conversion operator in a captureless lambda. It appears that if the call operator
-        // is consteval the conversion operator must be as well, otherwise it cannot take the address of the invoke
-        // function.
-        const bool isConversionOpWithConstevalCallOp{[&]() {
-            if(methodDecl) {
-                if(const auto callOp = methodDecl->getParent()->getLambdaCallOperator()) {
-                    return callOp->isConsteval();
+    if(const FunctionDecl& constExprDecl{isLambdaStaticInvoker ? *methodDecl->getParent()->getLambdaCallOperator()
+                                                               : decl};
+       constExprDecl.isConstexpr()) {
+
+        ConstexprSpecKind constexrKind{constExprDecl.isImmediateFunction() ? ConstexprSpecKind::Consteval
+                                                                           : constExprDecl.getConstexprKind()};
+
+        if(isLambda) {
+            // Special treatment for a conversion operator in a captureless lambda. It appears that if the call operator
+            // is consteval the conversion operator must be manually promoted to consteval as well, otherwise it cannot
+            // take the address of the invoke function.
+            if(const auto* callOp{methodDecl->getParent()->getLambdaCallOperator()}; isa<CXXConversionDecl>(decl)) {
+                if(callOp->isConsteval()) {
+                    constexrKind = ConstexprSpecKind::Consteval;
                 }
+
+            } else if(llvm::SmallVector<clang::PartialDiagnosticAt, 8> Diags{};
+                      // remove a potential constexpr from a lambda if the function is unusable in a constant expression
+                      not clang::Expr::isPotentialConstantExpr(callOp, Diags)) {
+                constexrKind = ConstexprSpecKind::Unspecified;
             }
+        }
 
-            return false;
-        }()};
-
-        if(not isConversionOpWithConstevalCallOp and constExprDecl.isConstexprSpecified()) {
-            if(skipConstexpr) {
-                mOutputFormatHelper.Append(kwCommentStart);
-            }
-
-            mOutputFormatHelper.Append(kwConstExprSpace);
-
-            if(skipConstexpr) {
-                mOutputFormatHelper.Append(kwCCommentEndSpace);
-            }
-
-        } else if(isConversionOpWithConstevalCallOp or constExprDecl.isConsteval()) {
-            mOutputFormatHelper.Append(kwConstEvalSpace);
+        switch(constexrKind) {
+            case ConstexprSpecKind::Unspecified: break;
+            case ConstexprSpecKind::Constexpr: mOutputFormatHelper.Append(kwConstExprSpace); break;
+            case ConstexprSpecKind::Consteval: mOutputFormatHelper.Append(kwConstEvalSpace); break;
+            case ConstexprSpecKind::Constinit: break;
         }
     }
 

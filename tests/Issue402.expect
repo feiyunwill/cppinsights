@@ -4,7 +4,7 @@ int main()
   class __lambda_2_8
   {
     public: 
-    inline /*constexpr */ void operator()() const
+    inline constexpr void operator()() const
     {
     }
     
@@ -15,27 +15,27 @@ int main()
     };
     
     private: 
-    static inline /*constexpr */ void __invoke()
+    static inline constexpr void __invoke()
     {
       __lambda_2_8{}.operator()();
     }
     
     public: 
-    // inline /*constexpr */ __lambda_2_8 & operator=(const __lambda_2_8 &) /* noexcept */ = delete;
+    // inline constexpr __lambda_2_8 & operator=(const __lambda_2_8 &) /* noexcept */ = delete;
   };
   
   
   class __lambda_2_3
   {
     public: 
-    inline /*constexpr */ void operator()() const
+    inline constexpr void operator()() const
     {
     }
     
     // private: 
     __lambda_2_8 var;
     public: 
-    // inline /*constexpr */ __lambda_2_3 & operator=(const __lambda_2_3 &) /* noexcept */ = delete;
+    // inline constexpr __lambda_2_3 & operator=(const __lambda_2_3 &) /* noexcept */ = delete;
   };
   
   return 0;

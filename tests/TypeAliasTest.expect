@@ -4,7 +4,7 @@ int main()
   class __lambda_3_12
   {
     public: 
-    inline /*constexpr */ int operator()() const
+    inline constexpr int operator()() const
     {
       using mType = int;
       using xType = int;

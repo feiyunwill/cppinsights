@@ -30,7 +30,7 @@ void f()
   class __lambda_18_34
   {
     public: 
-    inline /*constexpr */ bool operator()() const
+    inline constexpr bool operator()() const
     {
       return false;
     }
@@ -42,7 +42,7 @@ void f()
     };
     
     private: 
-    static inline /*constexpr */ bool __invoke()
+    static inline constexpr bool __invoke()
     {
       return __lambda_18_34{}.operator()();
     }

@@ -1,24 +1,24 @@
-.tmp.cpp:7:27: error: unknown type name 'S'
-    7 |     inline /*constexpr */ S operator()() const
-      |                           ^
+.tmp.cpp:7:22: error: unknown type name 'S'
+    7 |     inline constexpr S operator()() const
+      |                      ^
 .tmp.cpp:18:25: error: unknown type name 'S'
    18 |     using retType_5_7 = S (*)();
       |                         ^
 .tmp.cpp:19:31: error: unknown type name 'retType_5_7'
    19 |     inline constexpr operator retType_5_7 () const noexcept
       |                               ^
-.tmp.cpp:25:34: error: unknown type name 'S'
-   25 |     static inline /*constexpr */ S __invoke()
-      |                                  ^
+.tmp.cpp:25:29: error: unknown type name 'S'
+   25 |     static inline constexpr S __invoke()
+      |                             ^
 .tmp.cpp:15:16: warning: braces around scalar initializer [-Wbraced-scalar-init]
    15 |       return S{{676}};
       |                ^~~~~
 .tmp.cpp:15:14: error: no viable conversion from returned value of type 'S' to function return type 'int'
    15 |       return S{{676}};
       |              ^~~~~~~~
-.tmp.cpp:36:27: error: unknown type name 'S'
-   36 |     inline /*constexpr */ S operator()()
-      |                           ^
+.tmp.cpp:36:22: error: unknown type name 'S'
+   36 |     inline constexpr S operator()()
+      |                      ^
 .tmp.cpp:43:5: error: unknown type name 'S'
    43 |     S s;
       |     ^

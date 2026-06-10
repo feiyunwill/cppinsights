@@ -146,7 +146,7 @@ const void withNoexceptNoexceptCtor()
   class __lambda_19_23
   {
     public: 
-    inline /*constexpr */ buh operator()() const
+    inline constexpr buh operator()() const
     {
       return buh();
     }
@@ -158,7 +158,7 @@ const void withNoexceptNoexceptCtor()
     };
     
     private: 
-    static inline /*constexpr */ buh __invoke()
+    static inline constexpr buh __invoke()
     {
       return __lambda_19_23{}.operator()();
     }

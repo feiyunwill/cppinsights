@@ -2,7 +2,7 @@
 class __lambda_3_47
 {
   public: 
-  inline /*constexpr */ void operator()() const
+  inline constexpr void operator()() const
   {
   }
   
@@ -13,7 +13,7 @@ class __lambda_3_47
   }
   
   private: 
-  static inline /*constexpr */ void __invoke()
+  static inline constexpr void __invoke()
   {
     __lambda_3_47{}.operator()();
   }
@@ -29,7 +29,7 @@ FuncPtr_3 a = (+__lambda_3_47{}.operator __lambda_3_47::retType_3_47());
 class __lambda_5_16
 {
   public: 
-  inline /*constexpr */ void operator()() const
+  inline constexpr void operator()() const
   {
   }
   
@@ -40,7 +40,7 @@ class __lambda_5_16
   }
   
   private: 
-  static inline /*constexpr */ void __invoke()
+  static inline constexpr void __invoke()
   {
     __lambda_5_16{}.operator()();
   }

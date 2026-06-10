@@ -2,7 +2,7 @@
 class __lambda_1_10
 {
   public: 
-  inline /*constexpr */ int operator()() const
+  inline constexpr int operator()() const
   {
     return 5;
   }
@@ -14,7 +14,7 @@ class __lambda_1_10
   };
   
   private: 
-  static inline /*constexpr */ int __invoke()
+  static inline constexpr int __invoke()
   {
     return __lambda_1_10{}.operator()();
   }
@@ -27,7 +27,7 @@ __lambda_1_10 x = __lambda_1_10{};
 class __lambda_5_11
 {
   public: 
-  inline /*constexpr */ int operator()(int b) const
+  inline constexpr int operator()(int b) const
   {
     return b * a;
   }

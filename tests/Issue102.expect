@@ -490,7 +490,7 @@ int test<int>(int && value)
   class __lambda_74_4
   {
     public: 
-    inline /*constexpr */ int operator()(int i) const
+    inline int operator()(int i) const
     {
       std::operator<<(std::cout, "This is int ");
       return i * 100;
@@ -503,7 +503,7 @@ int test<int>(int && value)
     };
     
     private: 
-    static inline /*constexpr */ int __invoke(int i)
+    static inline int __invoke(int i)
     {
       return __lambda_74_4{}.operator()(i);
     }
@@ -515,14 +515,14 @@ int test<int>(int && value)
   {
     public: 
     template<class type_parameter_0_0>
-    inline /*constexpr */ auto operator()(type_parameter_0_0 a) const
+    inline constexpr auto operator()(type_parameter_0_0 a) const
     {
       std::operator<<(std::cout, "This is default ");
       return 0;
     }
     private: 
     template<class type_parameter_0_0>
-    static inline /*constexpr */ auto __invoke(type_parameter_0_0 a)
+    static inline constexpr auto __invoke(type_parameter_0_0 a)
     {
       return __lambda_75_4{}.operator()<type_parameter_0_0>(a);
     }
@@ -565,7 +565,7 @@ int test<const char (&)[3]>(const char (&value)[3])
   class __lambda_74_4
   {
     public: 
-    inline /*constexpr */ int operator()(int i) const
+    inline int operator()(int i) const
     {
       std::operator<<(std::cout, "This is int ");
       return i * 100;
@@ -578,7 +578,7 @@ int test<const char (&)[3]>(const char (&value)[3])
     };
     
     private: 
-    static inline /*constexpr */ int __invoke(int i)
+    static inline int __invoke(int i)
     {
       return __lambda_74_4{}.operator()(i);
     }
@@ -590,7 +590,7 @@ int test<const char (&)[3]>(const char (&value)[3])
   {
     public: 
     template<class type_parameter_0_0>
-    inline /*constexpr */ auto operator()(type_parameter_0_0 a) const
+    inline constexpr auto operator()(type_parameter_0_0 a) const
     {
       std::operator<<(std::cout, "This is default ");
       return 0;
@@ -598,7 +598,7 @@ int test<const char (&)[3]>(const char (&value)[3])
     
     #ifdef INSIGHTS_USE_TEMPLATE
     template<>
-    inline /*constexpr */ int operator()<const char *>(const char * a) const
+    inline constexpr int operator()<const char *>(const char * a) const
     {
       std::operator<<(std::cout, "This is default ");
       return 0;
@@ -607,7 +607,7 @@ int test<const char (&)[3]>(const char (&value)[3])
     
     private: 
     template<class type_parameter_0_0>
-    static inline /*constexpr */ auto __invoke(type_parameter_0_0 a)
+    static inline constexpr auto __invoke(type_parameter_0_0 a)
     {
       return __lambda_75_4{}.operator()<type_parameter_0_0>(a);
     }
@@ -650,7 +650,7 @@ std::basic_string<char, std::char_traits<char>, std::allocator<char> > test<std:
   class __lambda_74_4
   {
     public: 
-    inline /*constexpr */ int operator()(int i) const
+    inline int operator()(int i) const
     {
       std::operator<<(std::cout, "This is int ");
       return i * 100;
@@ -663,7 +663,7 @@ std::basic_string<char, std::char_traits<char>, std::allocator<char> > test<std:
     };
     
     private: 
-    static inline /*constexpr */ int __invoke(int i)
+    static inline int __invoke(int i)
     {
       return __lambda_74_4{}.operator()(i);
     }
@@ -675,14 +675,14 @@ std::basic_string<char, std::char_traits<char>, std::allocator<char> > test<std:
   {
     public: 
     template<class type_parameter_0_0>
-    inline /*constexpr */ auto operator()(type_parameter_0_0 a) const
+    inline constexpr auto operator()(type_parameter_0_0 a) const
     {
       std::operator<<(std::cout, "This is default ");
       return 0;
     }
     private: 
     template<class type_parameter_0_0>
-    static inline /*constexpr */ auto __invoke(type_parameter_0_0 a)
+    static inline constexpr auto __invoke(type_parameter_0_0 a)
     {
       return __lambda_75_4{}.operator()<type_parameter_0_0>(a);
     }

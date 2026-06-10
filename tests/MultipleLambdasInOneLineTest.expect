@@ -6,7 +6,7 @@ int main()
   class __lambda_5_3
   {
     public: 
-    inline /*constexpr */ void operator()() const
+    inline void operator()() const
     {
       printf("Hello ");
     }
@@ -18,7 +18,7 @@ int main()
     };
     
     private: 
-    static inline /*constexpr */ void __invoke()
+    static inline void __invoke()
     {
       __lambda_5_3{}.operator()();
     }
@@ -29,7 +29,7 @@ int main()
   class __lambda_5_33
   {
     public: 
-    inline /*constexpr */ void operator()() const
+    inline void operator()() const
     {
       printf("world");
     }
@@ -41,7 +41,7 @@ int main()
     };
     
     private: 
-    static inline /*constexpr */ void __invoke()
+    static inline void __invoke()
     {
       __lambda_5_33{}.operator()();
     }

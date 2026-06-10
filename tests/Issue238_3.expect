@@ -5,7 +5,7 @@ void f()
   {
     public: 
     template<class type_parameter_0_0, class type_parameter_0_1>
-    inline /*constexpr */ auto operator()(type_parameter_0_0 init, type_parameter_0_1 container) const
+    inline constexpr auto operator()(type_parameter_0_0 init, type_parameter_0_1 container) const
     {
       {
         auto i = init;
@@ -18,7 +18,7 @@ void f()
     }
     private: 
     template<class type_parameter_0_0, class type_parameter_0_1>
-    static inline /*constexpr */ auto __invoke(type_parameter_0_0 init, type_parameter_0_1 container)
+    static inline constexpr auto __invoke(type_parameter_0_0 init, type_parameter_0_1 container)
     {
       return __lambda_2_26{}.operator()<type_parameter_0_0, type_parameter_0_1>(init, container);
     }

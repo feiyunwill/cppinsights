@@ -3,7 +3,7 @@ int x = {3};
 class __lambda_4_15
 {
   public: 
-  inline /*constexpr */ void operator()()
+  inline constexpr void operator()()
   {
     ++s2;
   }

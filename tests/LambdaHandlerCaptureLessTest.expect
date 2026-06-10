@@ -5,14 +5,14 @@ int main()
   {
     public: 
     template<class type_parameter_0_0, class type_parameter_0_1>
-    inline /*constexpr */ auto operator()(type_parameter_0_0 a, type_parameter_0_1 b) const
+    inline constexpr auto operator()(type_parameter_0_0 a, type_parameter_0_1 b) const
     {
       return a + b;
     }
     
     #ifdef INSIGHTS_USE_TEMPLATE
     template<>
-    inline /*constexpr */ int operator()<int, char>(int a, char b) const
+    inline constexpr int operator()<int, char>(int a, char b) const
     {
       return a + static_cast<int>(b);
     }
@@ -31,14 +31,14 @@ int main()
     
     private: 
     template<class type_parameter_0_0, class type_parameter_0_1>
-    static inline /*constexpr */ auto __invoke(type_parameter_0_0 a, type_parameter_0_1 b)
+    static inline constexpr auto __invoke(type_parameter_0_0 a, type_parameter_0_1 b)
     {
       return __lambda_4_28{}.operator()<type_parameter_0_0, type_parameter_0_1>(a, b);
     }
     
     #ifdef INSIGHTS_USE_TEMPLATE
     template<>
-    static inline /*constexpr */ int __invoke<int, char>(int a, char b)
+    static inline constexpr int __invoke<int, char>(int a, char b)
     {
       return __lambda_4_28{}.operator()<int, char>(a, b);
     }

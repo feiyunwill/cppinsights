@@ -10,10 +10,10 @@
 .tmp.cpp:32:1: error: unknown type name '__lambda_15_12'
    32 | __lambda_15_12 delay_invoke<void (*)(int, int, int, int), int, int, int, int>(void (*f)(int, int, int, int), int __args1, int __args2, int __args3, int __args4)
       | ^
-.tmp.cpp:38:27: error: no template named 'invoke_result_t'; did you mean 'std::invoke_result_t'?
-   38 |     inline /*constexpr */ invoke_result_t<void (*const &)(int, int, int, int), const int &, const int &, const int &, const int &> operator()() const
-      |                           ^~~~~~~~~~~~~~~
-      |                           std::invoke_result_t
+.tmp.cpp:38:22: error: no template named 'invoke_result_t'; did you mean 'std::invoke_result_t'?
+   38 |     inline constexpr invoke_result_t<void (*const &)(int, int, int, int), const int &, const int &, const int &, const int &> operator()() const
+      |                      ^~~~~~~~~~~~~~~
+      |                      std::invoke_result_t
 ... invoke.h:387:1: note: 'std::invoke_result_t' declared here
   387 | using invoke_result_t = __invoke_result_t<_Fn, _Args...>;
       | ^

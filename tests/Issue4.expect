@@ -9,7 +9,7 @@ int main()
   class __lambda_9_11
   {
     public: 
-    inline /*constexpr */ void operator()() const
+    inline constexpr void operator()() const
     {
       printf("a: %c\n", static_cast<int>(uuu));
     }

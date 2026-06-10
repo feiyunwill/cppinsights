@@ -4,7 +4,7 @@
 class __lambda_5_28
 {
   public: 
-  inline /*constexpr */ void operator()() const
+  inline constexpr void operator()() const
   {
   }
   
@@ -15,7 +15,7 @@ class __lambda_5_28
   };
   
   private: 
-  static inline /*constexpr */ void __invoke()
+  static inline constexpr void __invoke()
   {
     __lambda_5_28{}.operator()();
   }
@@ -37,7 +37,7 @@ class Container
 class __lambda_11_27
 {
   public: 
-  inline /*constexpr */ void operator()() const
+  inline constexpr void operator()() const
   {
   }
   
@@ -48,7 +48,7 @@ class __lambda_11_27
   };
   
   private: 
-  static inline /*constexpr */ void __invoke()
+  static inline constexpr void __invoke()
   {
     __lambda_11_27{}.operator()();
   }
@@ -64,7 +64,7 @@ static Container<__lambda_11_27, 2> c();
 class __lambda_13_17
 {
   public: 
-  inline /*constexpr */ void operator()() const
+  inline constexpr void operator()() const
   {
   }
   
@@ -75,7 +75,7 @@ class __lambda_13_17
   };
   
   private: 
-  static inline /*constexpr */ void __invoke()
+  static inline constexpr void __invoke()
   {
     __lambda_13_17{}.operator()();
   }
@@ -91,7 +91,7 @@ static __lambda_13_17 & f();
 class __lambda_15_24
 {
   public: 
-  inline /*constexpr */ void operator()() const
+  inline constexpr void operator()() const
   {
   }
   
@@ -102,7 +102,7 @@ class __lambda_15_24
   };
   
   private: 
-  static inline /*constexpr */ void __invoke()
+  static inline constexpr void __invoke()
   {
     __lambda_15_24{}.operator()();
   }
@@ -120,7 +120,7 @@ static void h(__lambda_15_24 *)
 class __lambda_17_24
 {
   public: 
-  inline /*constexpr */ void operator()() const
+  inline constexpr void operator()() const
   {
   }
   
@@ -131,7 +131,7 @@ class __lambda_17_24
   };
   
   private: 
-  static inline /*constexpr */ void __invoke()
+  static inline constexpr void __invoke()
   {
     __lambda_17_24{}.operator()();
   }
@@ -145,7 +145,7 @@ class __lambda_17_24
 class __lambda_17_43
 {
   public: 
-  inline /*constexpr */ int operator()() const
+  inline constexpr int operator()() const
   {
     return 2;
   }
@@ -157,7 +157,7 @@ class __lambda_17_43
   };
   
   private: 
-  static inline /*constexpr */ int __invoke()
+  static inline constexpr int __invoke()
   {
     return __lambda_17_43{}.operator()();
   }

@@ -9,7 +9,7 @@ struct C
     class __lambda_6_19
     {
       public: 
-      inline /*constexpr */ int operator()() const
+      inline constexpr int operator()() const
       {
         return __this->m + a;
       }

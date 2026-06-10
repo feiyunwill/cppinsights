@@ -5,13 +5,13 @@ int main()
   class __lambda_4_5
   {
     public: 
-    inline /*constexpr */ void operator()() const
+    inline constexpr void operator()() const
     {
             
       class __lambda_6_9
       {
         public: 
-        inline /*constexpr */ void operator()() const
+        inline constexpr void operator()() const
         {
           buffer = 2;
         }

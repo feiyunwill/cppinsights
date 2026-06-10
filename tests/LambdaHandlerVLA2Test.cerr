@@ -24,4 +24,7 @@
 .tmp.cpp:15:12: error: fields must have a constant size: 'variable length array in structure' extension will never be supported
    15 |     char (&buffer)[n];
       |            ^
-3 warnings and 2 errors generated.
+.tmp.cpp:8:27: error: no return statement in constexpr function
+    8 |     inline constexpr bool operator()(int i, int x) const
+      |                           ^
+3 warnings and 3 errors generated.

@@ -7,7 +7,7 @@ class Foo
     class __lambda_6_18
     {
       public: 
-      inline /*constexpr */ void operator()() const
+      inline constexpr void operator()() const
       {
         __this->Get();
       }
@@ -21,7 +21,7 @@ class Foo
     class __lambda_10_18
     {
       public: 
-      inline /*constexpr */ void operator()() const
+      inline constexpr void operator()() const
       {
         __this->Get();
       }
@@ -35,7 +35,7 @@ class Foo
     class __lambda_14_18
     {
       public: 
-      inline /*constexpr */ void operator()() const
+      inline constexpr void operator()() const
       {
         (&__this)->Get();
       }
@@ -72,7 +72,7 @@ struct X
     class __lambda_35_9
     {
       public: 
-      inline /*constexpr */ int operator()() const
+      inline constexpr int operator()() const
       {
         return __this->operator()(__this->x + __this->y);
       }

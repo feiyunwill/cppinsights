@@ -16,7 +16,7 @@ int main()
       class __lambda_9_8
       {
         public: 
-        inline /*constexpr */ int operator()() const
+        inline constexpr int operator()() const
         {
           return k;
         }

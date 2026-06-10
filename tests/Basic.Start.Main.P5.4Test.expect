@@ -8,7 +8,7 @@ int main(int argc, const char ** argv)
   class __lambda_5_13
   {
     public: 
-    inline /*constexpr */ int operator()() const
+    inline constexpr int operator()() const
     {
       return 2;
     }
@@ -20,7 +20,7 @@ int main(int argc, const char ** argv)
     };
     
     private: 
-    static inline /*constexpr */ int __invoke()
+    static inline constexpr int __invoke()
     {
       return __lambda_5_13{}.operator()();
     }

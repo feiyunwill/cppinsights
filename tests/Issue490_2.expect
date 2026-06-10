@@ -2,7 +2,7 @@
 class __lambda_3_20
 {
   public: 
-  inline /*constexpr */ int operator()() const
+  inline constexpr int operator()() const
   {
     return 4;
   }
@@ -14,7 +14,7 @@ class __lambda_3_20
   };
   
   private: 
-  static inline /*constexpr */ int __invoke()
+  static inline constexpr int __invoke()
   {
     return __lambda_3_20{}.operator()();
   }

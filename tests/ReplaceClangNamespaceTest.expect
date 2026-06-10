@@ -14,7 +14,7 @@ int main()
   class __lambda_11_5
   {
     public: 
-    inline /*constexpr */ void operator()() const
+    inline constexpr void operator()() const
     {
       int x = mine::x;
     }
@@ -26,7 +26,7 @@ int main()
     };
     
     private: 
-    static inline /*constexpr */ void __invoke()
+    static inline constexpr void __invoke()
     {
       __lambda_11_5{}.operator()();
     }

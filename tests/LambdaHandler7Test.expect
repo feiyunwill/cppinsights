@@ -8,7 +8,7 @@ int main()
   class __lambda_8_57
   {
     public: 
-    inline /*constexpr */ int operator()(int fir, int sec) const
+    inline constexpr int operator()(int fir, int sec) const
     {
       return fir * sec;
     }
@@ -20,7 +20,7 @@ int main()
     };
     
     private: 
-    static inline /*constexpr */ int __invoke(int fir, int sec)
+    static inline constexpr int __invoke(int fir, int sec)
     {
       return __lambda_8_57{}.operator()(fir, sec);
     }

@@ -45,7 +45,7 @@ void f2<int, int, int, int, int>(int __args0, int __args1, int __args2, int __ar
   class __lambda_19_15
   {
     public: 
-    inline /*constexpr */ int operator()() const
+    inline constexpr int operator()() const
     {
       return g(__args0, __args1, __args2, __args3, __args4);
     }

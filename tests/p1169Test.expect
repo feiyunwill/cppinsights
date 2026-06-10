@@ -2,7 +2,7 @@
 class __lambda_3_13
 {
   public: 
-  static inline /*constexpr */ int operator()()
+  static inline constexpr int operator()()
   {
     return 4;
   }
