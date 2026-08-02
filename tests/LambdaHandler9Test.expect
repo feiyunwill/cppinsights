@@ -47,7 +47,7 @@ int main()
   class __lambda_25_14
   {
     public: 
-    inline /*constexpr */ void operator()(int x) const
+    inline constexpr void operator()(int x) const
     {
       switch(x) {
         case 2: printf("is 2\n");

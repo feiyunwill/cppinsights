@@ -7,7 +7,7 @@ int main()
   class __lambda_7_14
   {
     public: 
-    inline /*constexpr */ int operator()()
+    inline constexpr int operator()()
     {
       ++x;
       return x;

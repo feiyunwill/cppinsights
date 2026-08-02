@@ -6,7 +6,7 @@ struct Test
   class __lambda_5_13
   {
     public: 
-    inline /*constexpr */ void operator()() const
+    inline constexpr void operator()() const
     {
     }
     
@@ -17,7 +17,7 @@ struct Test
     };
     
     private: 
-    static inline /*constexpr */ void __invoke()
+    static inline constexpr void __invoke()
     {
       __lambda_5_13{}.operator()();
     }
@@ -32,7 +32,7 @@ struct Test
   class __lambda_7_29
   {
     public: 
-    inline /*constexpr */ void operator()() const
+    inline constexpr void operator()() const
     {
     }
     
@@ -43,7 +43,7 @@ struct Test
     }
     
     private: 
-    static inline /*constexpr */ void __invoke()
+    static inline constexpr void __invoke()
     {
       __lambda_7_29{}.operator()();
     }

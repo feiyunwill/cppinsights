@@ -4,7 +4,7 @@ int main()
   class __lambda_5_7
   {
     public: 
-    inline /*constexpr */ S operator()() const
+    inline constexpr S operator()() const
     {
       struct S
       {
@@ -22,7 +22,7 @@ int main()
     };
     
     private: 
-    static inline /*constexpr */ S __invoke()
+    static inline constexpr S __invoke()
     {
       return __lambda_5_7{}.operator()();
     }
@@ -33,7 +33,7 @@ int main()
   class __lambda_4_5
   {
     public: 
-    inline /*constexpr */ S operator()()
+    inline constexpr S operator()()
     {
       ++s.v;
       return S(s);
@@ -42,7 +42,7 @@ int main()
     // private: 
     S s;
     public: 
-    // inline /*constexpr */ __lambda_4_5(const __lambda_4_5 &) noexcept = default;
+    // inline constexpr __lambda_4_5(const __lambda_4_5 &) noexcept = default;
   };
   
   __lambda_4_5 l = __lambda_4_5{__lambda_5_7{}.operator()()};

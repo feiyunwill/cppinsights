@@ -8,7 +8,7 @@ int main()
   class __lambda_7_19
   {
     public: 
-    inline /*constexpr */ void operator()() const
+    inline constexpr void operator()() const
     {
       std::operator<<(std::cout.operator<<(x.operator*()), '\n');
     }
@@ -16,7 +16,7 @@ int main()
     // private: 
     std::unique_ptr<int, std::default_delete<int> > x;
     public: 
-    // inline /*constexpr */ __lambda_7_19(const __lambda_7_19 &) /* noexcept */ = delete;
+    // inline constexpr __lambda_7_19(const __lambda_7_19 &) /* noexcept */ = delete;
     // inline __lambda_7_19 & operator=(const __lambda_7_19 &) /* noexcept */ = delete;
     // inline ~__lambda_7_19() noexcept = default;
   };

@@ -7,7 +7,7 @@ int main()
   class __lambda_7_17
   {
     public: 
-    inline /*constexpr */ int operator()() const
+    inline constexpr int operator()() const
     {
       return x * 2;
     }
@@ -24,7 +24,7 @@ int main()
   class __lambda_11_17
   {
     public: 
-    inline /*constexpr */ int operator()() const
+    inline constexpr int operator()() const
     {
       return x * 2;
     }
@@ -37,7 +37,7 @@ int main()
   class __lambda_11_43
   {
     public: 
-    inline /*constexpr */ int operator()() const
+    inline constexpr int operator()() const
     {
       return x * 2;
     }
@@ -54,7 +54,7 @@ int main()
   class __lambda_15_9
   {
     public: 
-    inline /*constexpr */ void operator()() const
+    inline void operator()() const
     {
       printf("started\n");
     }
@@ -66,7 +66,7 @@ int main()
     };
     
     private: 
-    static inline /*constexpr */ void __invoke()
+    static inline void __invoke()
     {
       __lambda_15_9{}.operator()();
     }
@@ -77,7 +77,7 @@ int main()
   class __lambda_15_37
   {
     public: 
-    inline /*constexpr */ int operator()() const
+    inline constexpr int operator()() const
     {
       return --x;
     }
@@ -90,7 +90,7 @@ int main()
   class __lambda_15_59
   {
     public: 
-    inline /*constexpr */ void operator()() const
+    inline void operator()() const
     {
       printf("after\n");
     }
@@ -102,7 +102,7 @@ int main()
     };
     
     private: 
-    static inline /*constexpr */ void __invoke()
+    static inline void __invoke()
     {
       __lambda_15_59{}.operator()();
     }
@@ -116,7 +116,7 @@ int main()
   class __lambda_19_9
   {
     public: 
-    inline /*constexpr */ void operator()() const
+    inline void operator()() const
     {
       printf("started\n");
     }
@@ -128,7 +128,7 @@ int main()
     };
     
     private: 
-    static inline /*constexpr */ void __invoke()
+    static inline void __invoke()
     {
       __lambda_19_9{}.operator()();
     }
@@ -139,7 +139,7 @@ int main()
   class __lambda_20_9
   {
     public: 
-    inline /*constexpr */ void operator()() const
+    inline void operator()() const
     {
       printf("started\n");
     }
@@ -151,7 +151,7 @@ int main()
     };
     
     private: 
-    static inline /*constexpr */ void __invoke()
+    static inline void __invoke()
     {
       __lambda_20_9{}.operator()();
     }
@@ -162,7 +162,7 @@ int main()
   class __lambda_20_37
   {
     public: 
-    inline /*constexpr */ int operator()() const
+    inline constexpr int operator()() const
     {
       return --x;
     }
@@ -175,7 +175,7 @@ int main()
   class __lambda_20_59
   {
     public: 
-    inline /*constexpr */ void operator()() const
+    inline void operator()() const
     {
       printf("after\n");
     }
@@ -187,7 +187,7 @@ int main()
     };
     
     private: 
-    static inline /*constexpr */ void __invoke()
+    static inline void __invoke()
     {
       __lambda_20_59{}.operator()();
     }

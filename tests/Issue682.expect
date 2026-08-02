@@ -10,7 +10,7 @@ void Fun()
 class __lambda_5_17
 {
   public: 
-  inline /*constexpr */ bool operator()() const
+  inline constexpr bool operator()() const
   {
     return true;
   }
@@ -22,7 +22,7 @@ class __lambda_5_17
   };
   
   private: 
-  static inline /*constexpr */ bool __invoke()
+  static inline constexpr bool __invoke()
   {
     return __lambda_5_17{}.operator()();
   }

@@ -7,7 +7,7 @@ void f()
   class __lambda_10_34
   {
     public: 
-    inline /*constexpr */ bool operator()(int lhs, int rhs) const
+    inline constexpr bool operator()(int lhs, int rhs) const
     {
       return lhs > rhs;
     }
@@ -19,7 +19,7 @@ void f()
     };
     
     private: 
-    static inline /*constexpr */ bool __invoke(int lhs, int rhs)
+    static inline constexpr bool __invoke(int lhs, int rhs)
     {
       return __lambda_10_34{}.operator()(lhs, rhs);
     }

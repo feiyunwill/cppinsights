@@ -29,7 +29,7 @@ void test(X x)
   class __lambda_10_5
   {
     public: 
-    inline /*constexpr */ void operator()() const
+    inline constexpr void operator()() const
     {
       x.f<int>(17);
       x.ff<int, int, double>(17, 2, 55.5);

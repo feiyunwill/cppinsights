@@ -5,7 +5,7 @@ int main()
     class __lambda_3_14
     {
       public: 
-      inline /*constexpr */ int operator()() const
+      inline constexpr int operator()() const
       {
         return 2;
       }
@@ -17,7 +17,7 @@ int main()
       };
       
       private: 
-      static inline /*constexpr */ int __invoke()
+      static inline constexpr int __invoke()
       {
         return __lambda_3_14{}.operator()();
       }
@@ -29,7 +29,7 @@ int main()
     class __lambda_3_34
     {
       public: 
-      inline /*constexpr */ int operator()() const
+      inline constexpr int operator()() const
       {
         return 3;
       }
@@ -41,7 +41,7 @@ int main()
       };
       
       private: 
-      static inline /*constexpr */ int __invoke()
+      static inline constexpr int __invoke()
       {
         return __lambda_3_34{}.operator()();
       }
@@ -53,7 +53,7 @@ int main()
     class __lambda_3_53
     {
       public: 
-      inline /*constexpr */ int operator()() const
+      inline constexpr int operator()() const
       {
         return 4;
       }
@@ -65,7 +65,7 @@ int main()
       };
       
       private: 
-      static inline /*constexpr */ int __invoke()
+      static inline constexpr int __invoke()
       {
         return __lambda_3_53{}.operator()();
       }

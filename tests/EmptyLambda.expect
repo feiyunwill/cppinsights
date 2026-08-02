@@ -4,7 +4,7 @@ void foo()
   class __lambda_2_1
   {
     public: 
-    inline /*constexpr */ void operator()() const
+    inline constexpr void operator()() const
     {
     }
     
@@ -15,7 +15,7 @@ void foo()
     };
     
     private: 
-    static inline /*constexpr */ void __invoke()
+    static inline constexpr void __invoke()
     {
       __lambda_2_1{}.operator()();
     }

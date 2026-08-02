@@ -29,7 +29,7 @@ int main()
   class __lambda_10_10
   {
     public: 
-    inline /*constexpr */ void operator()() const
+    inline void operator()() const
     {
       printf("Hello");
     }
@@ -41,7 +41,7 @@ int main()
     };
     
     private: 
-    static inline /*constexpr */ void __invoke()
+    static inline void __invoke()
     {
       __lambda_10_10{}.operator()();
     }
@@ -53,7 +53,7 @@ int main()
   class __lambda_12_10
   {
     public: 
-    inline /*constexpr */ int operator()() const
+    inline int operator()() const
     {
       printf("Bello");
       return 1;
@@ -66,7 +66,7 @@ int main()
     };
     
     private: 
-    static inline /*constexpr */ int __invoke()
+    static inline int __invoke()
     {
       return __lambda_12_10{}.operator()();
     }

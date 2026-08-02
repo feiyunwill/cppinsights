@@ -3,14 +3,14 @@ class __lambda_3_10
 {
   public: 
   template<class T>
-  inline /*constexpr */ auto operator()(T t, int i) const
+  inline constexpr auto operator()(T t, int i) const
   {
     return i;
   }
   
   #ifdef INSIGHTS_USE_TEMPLATE
   template<>
-  inline /*constexpr */ int operator()<int>(int t, int i) const
+  inline constexpr int operator()<int>(int t, int i) const
   {
     return i;
   }
@@ -18,7 +18,7 @@ class __lambda_3_10
   
   private: 
   template<class T>
-  static inline /*constexpr */ auto __invoke(T t, int i)
+  static inline constexpr auto __invoke(T t, int i)
   {
     return __lambda_3_10{}.operator()<T>(t, i);
   }

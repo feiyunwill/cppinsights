@@ -1,0 +1,88 @@
+inline consteval int id(int i)
+{
+  return static_cast<int &&>(i);
+}
+inline constexpr char id(char c)
+{
+  return static_cast<char &&>(c);
+}
+
+template<typename T>
+inline constexpr int f(T t)
+{
+  return t + id(t);
+}
+
+#ifdef INSIGHTS_USE_TEMPLATE
+template<>
+inline constexpr int f<char>(char t)
+{
+  return static_cast<int>(t) + static_cast<int>(id(t));
+}
+#endif
+
+
+/* First instantiated from: p2564Test.cpp:13 */
+#ifdef INSIGHTS_USE_TEMPLATE
+template<>
+inline consteval int f<int>(int t)
+{
+  return t + id(t);
+}
+#endif
+
+
+using FuncPtr_11 = int (*)(char);
+FuncPtr_11 a = &f<char>;
+
+/* PASSED: static_assert(f(3) == 6); */
+
+template<typename T>
+inline constexpr int g(T t)
+{
+  return t + id(42);
+}
+
+template<typename T, typename F>
+inline constexpr bool is_not(T t, F f)
+{
+  return !f(t);
+}
+
+/* First instantiated from: p2564Test.cpp:27 */
+#ifdef INSIGHTS_USE_TEMPLATE
+template<>
+inline constexpr bool is_not<int, bool (*)(int)>(int t, bool (*f)(int))
+{
+  return !f(t);
+}
+#endif
+
+
+inline consteval bool is_even(int i)
+{
+  return (i % 2) == 0;
+}
+
+/* PASSED: static_assert(is_not(5, is_even)); */
+
+int x = 0;
+
+template<typename T>
+inline constexpr T h(T t)
+{
+  return static_cast<T &&>(t);
+}
+
+template<typename T>
+inline constexpr T hh()
+{
+  return h<T>();
+}
+
+struct A
+{
+  int x;
+  int y = id(this->x);
+};
+

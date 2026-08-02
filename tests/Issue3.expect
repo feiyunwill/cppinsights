@@ -4,13 +4,13 @@ void x()
   class __lambda_3_12
   {
     public: 
-    inline /*constexpr */ void operator()() const
+    inline constexpr void operator()() const
     {
       
       class __lambda_4_5
       {
         public: 
-        inline /*constexpr */ void operator()() const
+        inline constexpr void operator()() const
         {
         }
         
@@ -21,7 +21,7 @@ void x()
         };
         
         private: 
-        static inline /*constexpr */ void __invoke()
+        static inline constexpr void __invoke()
         {
           __lambda_4_5{}.operator()();
         }
@@ -38,7 +38,7 @@ void x()
     };
     
     private: 
-    static inline /*constexpr */ void __invoke()
+    static inline constexpr void __invoke()
     {
       __lambda_3_12{}.operator()();
     }

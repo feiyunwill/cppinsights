@@ -5,7 +5,7 @@ int main()
   class __lambda_4_5
   {
     public: 
-    inline /*constexpr */ void operator()() const
+    inline constexpr void operator()() const
     {
       char (&__buffer5)[2] = buffer;
       char & a = __buffer5[0];

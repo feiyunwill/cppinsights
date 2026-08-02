@@ -21,7 +21,7 @@ int main()
   class __lambda_10_13
   {
     public: 
-    inline /*constexpr */ int operator()(int x) const
+    inline constexpr int operator()(int x) const
     {
       return x + y;
     }

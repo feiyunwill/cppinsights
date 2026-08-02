@@ -5,7 +5,7 @@ void Test(int n)
   class __lambda_6_5
   {
     public: 
-    inline /*constexpr */ bool operator()(int i, int x) const
+    inline constexpr bool operator()(int i, int x) const
     {
       return static_cast<int>(buffer[i]) > static_cast<int>(buffer[x]);
     }

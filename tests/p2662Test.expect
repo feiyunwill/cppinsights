@@ -21,7 +21,7 @@ class __lambda_12_12
 {
   public: 
   template<class ... type_parameter_0_0>
-  inline /*constexpr */ auto operator()(type_parameter_0_0... pack) const
+  inline constexpr auto operator()(type_parameter_0_0... pack) const
   {
     decltype(pack...[0]) x5;
     decltype((pack...[0])) x6 = {x5};
@@ -30,7 +30,7 @@ class __lambda_12_12
   
   #ifdef INSIGHTS_USE_TEMPLATE
   template<>
-  inline /*constexpr */ int operator()<int, double, char>(int __pack0, double __pack1, char __pack2) const
+  inline constexpr int operator()<int, double, char>(int __pack0, double __pack1, char __pack2) const
   {
     int x5;
     int & x6 = {x5};
@@ -40,7 +40,7 @@ class __lambda_12_12
   
   private: 
   template<class ... type_parameter_0_0>
-  static inline /*constexpr */ auto __invoke(type_parameter_0_0... pack)
+  static inline constexpr auto __invoke(type_parameter_0_0... pack)
   {
     return __lambda_12_12{}.operator()<type_parameter_0_0... >(pack...);
   }

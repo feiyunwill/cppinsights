@@ -12,7 +12,7 @@ class EventContainer
   class __lambda_6_43
   {
     public: 
-    inline /*constexpr */ void operator()() const
+    inline constexpr void operator()() const
     {
       std::cout.operator<<(__this->val);
     }
@@ -20,8 +20,8 @@ class EventContainer
     // private: 
     EventContainer * __this;
     public: 
-    // inline /*constexpr */ __lambda_6_43(const __lambda_6_43 &) noexcept = default;
-    // inline /*constexpr */ __lambda_6_43(__lambda_6_43 &&) noexcept = default;
+    // inline constexpr __lambda_6_43(const __lambda_6_43 &) noexcept = default;
+    // inline constexpr __lambda_6_43(__lambda_6_43 &&) noexcept = default;
   };
   
   inline EventContainer()

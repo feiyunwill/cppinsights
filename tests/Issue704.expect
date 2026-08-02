@@ -13,7 +13,7 @@ void foo()
   class __lambda_12_17
   {
     public: 
-    inline /*constexpr */ void operator()() const
+    inline constexpr void operator()() const
     {
     }
     
@@ -34,7 +34,7 @@ void bar()
   class __lambda_19_20
   {
     public: 
-    inline /*constexpr */ void operator()() const
+    inline constexpr void operator()() const
     {
     }
     

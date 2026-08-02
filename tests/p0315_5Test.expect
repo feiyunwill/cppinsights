@@ -8,7 +8,7 @@ class LambdaInNTTP
 class __lambda_7_32
 {
   public: 
-  inline /*constexpr */ void operator()() const
+  inline constexpr void operator()() const
   {
   }
   
@@ -19,7 +19,7 @@ class __lambda_7_32
   }
   
   private: 
-  static inline /*constexpr */ void __invoke()
+  static inline constexpr void __invoke()
   {
     __lambda_7_32{}.operator()();
   }

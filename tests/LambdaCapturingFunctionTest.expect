@@ -15,7 +15,7 @@ int main()
   class __lambda_15_14
   {
     public: 
-    inline /*constexpr */ void operator()() const
+    inline constexpr void operator()() const
     {
       d(3);
     }

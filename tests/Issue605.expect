@@ -10,16 +10,16 @@ int main()
   class __lambda_11_5
   {
     public: 
-    inline /*constexpr */ void operator()() const
+    inline constexpr void operator()() const
     {
     }
     
     // private: 
     std::unique_ptr<int, std::default_delete<int> > a;
     public: 
-    // inline /*constexpr */ __lambda_11_5(const __lambda_11_5 &) /* noexcept */ = delete;
-    // inline /*constexpr */ __lambda_11_5 & operator=(const __lambda_11_5 &) /* noexcept */ = delete;
-    // inline /*constexpr */ ~__lambda_11_5() noexcept = default;
+    // inline constexpr __lambda_11_5(const __lambda_11_5 &) /* noexcept */ = delete;
+    // inline constexpr __lambda_11_5 & operator=(const __lambda_11_5 &) /* noexcept */ = delete;
+    // inline constexpr ~__lambda_11_5() noexcept = default;
   };
   
   ;
