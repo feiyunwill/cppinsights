@@ -388,7 +388,13 @@ extern struct __mptr* __vtbl_array[];
 
     if(auto err = opExpected.takeError()) {
         if(gAutoComplete) {
-#define INSIGHTS_OPT(option, name, deflt, description, category) llvm::outs() << "--" << option << " ";
+// Emit options in the same format clang uses for its own --autocomplete, i.e.
+// "option\tdescription" (a single TAB separates the option from its
+// description). This lets every shell completion script reuse clang's parsing
+// and show the description alongside the option. The leading "--" is added here
+// so the bare option name from InsightsOptions.def can be reused directly.
+#define INSIGHTS_OPT(option, name, deflt, description, category) \
+    llvm::outs() << "--" << option << "\t" << description << "\n";
 
 #include "InsightsOptions.def"
 

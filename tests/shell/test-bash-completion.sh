@@ -8,6 +8,12 @@
 PATH=$PATH:$1
 failureIsOkay=$4
 
+# Redirect any LLVM profiling output (e.g. default.profraw written by an
+# instrumented build) away from the sandbox directory so it does not pollute the
+# file-completion list below.
+export LLVM_PROFILE_FILE=/tmp/cppinsights-bash-test-%p.profraw
+rm -f "$2"/*.profraw
+
 cd $2
 
 source $3
