@@ -23,6 +23,8 @@ _insights_clang_options()
     [[ $i != $cword && "${COMP_WORDS[$(($i))]}" != '=' ]] && arg="$arg,"
   done
 
+  # Each line is "option\tdescription" (TAB separated, matching clang's
+  # --autocomplete format). Keep only the option name (the first field).
   options=$( insights -- --autocomplete="$arg" 2>/dev/null | awk '{print $1}' | tr '\n' ' ' )
 
   if [[ "$options" == "" ||  "$options" == " " ]]; then
@@ -60,7 +62,8 @@ _insights()
   COMP_WORDS=$words
   COMP_CWORD=$cword
 
-  VALUES=$(insights --autocomplete)
+  # Each line is "option\tdescription" (TAB separated). Keep only the name.
+  VALUES=$(insights --autocomplete | awk '{print $1}')
   COMPREPLY=( $( compgen -W '-h --help --help-list --version -p --extra-arg --extra-arg-before $VALUES' -- "$cur" ) )
 
   # Expanding files if nothing was provided

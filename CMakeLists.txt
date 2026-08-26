@@ -584,6 +584,16 @@ if (NOT WIN32)
     # Not ready for Windows yet
     #
 
+    # Install shell completion scripts for the supported shells. The files are
+    # renamed to match each shell's expected completion-script name.
+    install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/scripts/bash-autocomplete.sh
+            DESTINATION share/bash-completion/completions RENAME insights)
+    install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/scripts/zsh-autocomplete.zsh
+            DESTINATION share/zsh/site-functions RENAME _insights)
+    install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/scripts/fish-autocomplete.fish
+            DESTINATION share/fish/vendor_completions.d RENAME insights.fish)
+
+
     # additional includes we need when building outside the llvm-folder
     if (BUILD_INSIGHTS_OUTSIDE_LLVM)
         if(INSIGHTS_STRIP)
@@ -644,6 +654,34 @@ else()
     find_package(Python3 COMPONENTS Interpreter )
 endif()
 
+# Detect zsh and fish for the shell-completion tests. They are optional; the
+# corresponding tests are skipped when the shell is not installed.
+find_program(ZSH_EXECUTABLE zsh)
+find_program(FISH_EXECUTABLE fish)
+
+# Build the optional completion-test commands up front. When the shell is
+# missing the variable is left empty, so the COMMAND in the test targets
+# expands to nothing (no subcommand is generated).
+if(ZSH_EXECUTABLE)
+    set(ZSH_COMPLETION_TEST
+        ${CMAKE_CURRENT_SOURCE_DIR}/tests/test-zsh-completion.sh
+        ${CMAKE_CURRENT_BINARY_DIR}
+        ${CMAKE_CURRENT_SOURCE_DIR}/tests/shell
+        ${CMAKE_CURRENT_SOURCE_DIR}/scripts/zsh-autocomplete.zsh)
+else()
+    set(ZSH_COMPLETION_TEST "")
+endif()
+
+if(FISH_EXECUTABLE)
+    set(FISH_COMPLETION_TEST
+        ${CMAKE_CURRENT_SOURCE_DIR}/tests/test-fish-completion.sh
+        ${CMAKE_CURRENT_BINARY_DIR}
+        ${CMAKE_CURRENT_SOURCE_DIR}/tests/shell
+        ${CMAKE_CURRENT_SOURCE_DIR}/scripts/fish-autocomplete.fish)
+else()
+    set(FISH_COMPLETION_TEST "")
+endif()
+
 if (NOT Python3_FOUND)
     message(WARNING "Could not find the program Python3. Target tests disabled.")
 else()
@@ -657,6 +695,8 @@ else()
         COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/tests/testSTDIN.sh ${CMAKE_CURRENT_BINARY_DIR}/$<TARGET_FILE_NAME:insights>
         COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/tests/testInvalidOption.sh ${CMAKE_CURRENT_BINARY_DIR}/$<TARGET_FILE_NAME:insights>
         COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/tests/shell/test-bash-completion.sh ${CMAKE_CURRENT_BINARY_DIR} ${CMAKE_CURRENT_SOURCE_DIR}/tests/shell ${CMAKE_CURRENT_SOURCE_DIR}/scripts/bash-autocomplete.sh ${TEST_FAILURE_IS_OK}
+        COMMAND ${ZSH_COMPLETION_TEST}
+        COMMAND ${FISH_COMPLETION_TEST}
         DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/$<TARGET_FILE_NAME:insights> ${CMAKE_CURRENT_SOURCE_DIR}/tests/runTest.py ${CMAKE_CURRENT_SOURCE_DIR}/tests/shell/test-bash-completion.sh
         WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/tests
         COMMENT "Running tests" VERBATIM
@@ -669,6 +709,8 @@ if (NOT WIN32)
         COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/tests/testSTDIN.sh ${CMAKE_CURRENT_BINARY_DIR}/insights
         COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/tests/testInvalidOption.sh ${CMAKE_CURRENT_BINARY_DIR}/insights
         COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/tests/shell/test-bash-completion.sh ${CMAKE_CURRENT_BINARY_DIR} ${CMAKE_CURRENT_SOURCE_DIR}/tests/shell ${CMAKE_CURRENT_SOURCE_DIR}/scripts/bash-autocomplete.sh
+        COMMAND ${ZSH_COMPLETION_TEST}
+        COMMAND ${FISH_COMPLETION_TEST}
         DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/insights ${CMAKE_CURRENT_SOURCE_DIR}/tests/runTest.py ${CMAKE_CURRENT_SOURCE_DIR}/tests/shell/test-bash-completion.sh
         WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/tests
         COMMENT "Running tests" VERBATIM
